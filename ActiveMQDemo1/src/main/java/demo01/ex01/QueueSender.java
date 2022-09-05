@@ -1,4 +1,4 @@
-package test;
+package demo01.ex01;
 
 import java.util.Date;
 import java.util.Properties;
@@ -41,7 +41,7 @@ public class QueueSender {
 //create text message
 		Message msg = session.createTextMessage("hello mesage from ActiveMQ");
 		producer.send(msg);
-		Person p = new Person(1001, "Thân Th? ??t", new Date());
+		Person p = new Person(1001, "Thï¿½n Th? ??t", new Date());
 		String xml = new XMLConvert<Person>(p).object2XML(p);
 		msg = session.createTextMessage(xml);
 		producer.send(msg);
