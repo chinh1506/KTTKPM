@@ -1,28 +1,28 @@
-package com.example.messagequeuetuan02.config;
+package com.example.activemq.subscribertuan02.config;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
-import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
 
-import javax.jms.ConnectionFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
 @EnableJms
-@ComponentScan(basePackages = "com.example")
-public class ConfigMessageMQ {
-    //    @Value("${spring.activemq.broker-url}")
+@Configuration
+public class ActiveMQConfiguration {
+
+//    public static final String CUSTOMER_TOPIC = "customer-topic";
+//
+//    public static final String TEXT_TOPIC = "text-topic";
+//
+//    public static final String OBJECT_TOPIC = "object-topic";
+
     private static final String BROKER_URL = "tcp://localhost:61616";
     private static final String BROKER_USERNAME = "admin";
     private static final String BROKER_PASSWORD = "admin";
@@ -36,14 +36,12 @@ public class ConfigMessageMQ {
         return connectionFactory;
     }
 
-
-    @Bean
-    public JmsTemplate jmsTemplate() {
-        JmsTemplate template = new JmsTemplate();
-        template.setConnectionFactory(connectionFactory());
-        return template;
-    }
-
+    //    @Bean
+//    public JmsListenerContainerFactory<?> topicListenerFactory(){
+//        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+//        factory.setMessageConverter(messageConverter());
+//        return factory;
+//    }
     @Bean
     public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
@@ -67,4 +65,5 @@ public class ConfigMessageMQ {
     public Map<Long, Object> objectMapMessage() {
         return new HashMap<>();
     }
+
 }

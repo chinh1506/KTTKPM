@@ -31,21 +31,8 @@ public class ListenMessage {
 		});
 	}
 
-	@JmsListener(destination = "inbound.queue")
-	@SendTo("outbound.queue")
-	public String receiveMessage(final Message jsonMessage) throws JMSException {
-		String messageData = null;
-		System.out.println("Tin nhắn nhận được: " + jsonMessage);
-		String response = null;
-		if (jsonMessage instanceof TextMessage) {
-			TextMessage textMessage = (TextMessage) jsonMessage;
-			messageData = textMessage.getText();
-//			ObjectMapper mapper = new ObjectMapper();
-//			Map map = mapper.readValue(messageData, Map.class);
-//			response = "Chào " + map.get("name");
-			response = messageData;
-			System.out.println("res: " + messageData);
-		}
-		return response;
+	@JmsListener(destination = "mailbox", containerFactory = "jmsListenerContainerFactory")
+	public void receiveMessage(final String email) {
+		System.out.println("Received <" + email + ">");
 	}
 }

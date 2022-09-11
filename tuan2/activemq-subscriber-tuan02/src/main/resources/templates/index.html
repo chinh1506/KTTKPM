@@ -10,13 +10,13 @@
 
 <body>
     <div>
-        <form action="publish" method="post">
-            <input type="text" name="message" />
-            <button type="submit">submit</button>
-        </form>
+<!--        <form action="publish" method="post">-->
+<!--            <input type="text" name="message" />-->
+<!--            <button type="submit">submit</button>-->
+<!--        </form>-->
         <textarea name="messages" id="" cols="30" rows="10">
             <th:block  th:each="message:${messages}">
-                [[${message}]]
+                [[${message.get}]]
             </th:block>
         </textarea>
     </div>
