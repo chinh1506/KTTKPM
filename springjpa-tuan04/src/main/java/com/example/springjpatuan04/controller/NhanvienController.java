@@ -4,7 +4,6 @@ import com.example.springjpatuan04.model.Nhanvien;
 import com.example.springjpatuan04.repository.NhanvienRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,5 +21,9 @@ public class NhanvienController {
     @GetMapping("cau8")
     public Double cau8() {
         return nhanvienRepository.getSumByLuong();
+    }
+    @GetMapping("cau9")
+    public List<String> cau9() {
+        return nhanvienRepository.getIdByMaybay("Boeing");
     }
 }

@@ -11,5 +11,8 @@ public interface NhanvienRepository extends JpaRepository<Nhanvien,String> {
     @Query(value = "select sum(luong) from nhanvien",nativeQuery = true)
     public Double getSumByLuong();
 
+    @Query(value = "select nv.manv from nhanvien nv inner join chungnhan cn on nv.manv=cn.manv\n" +
+            "            inner join maybay mb on cn.mamb= mb.mamb where loai like %?1%",nativeQuery = true)
+    public List<String> getIdByMaybay(String loai);
 
 }
