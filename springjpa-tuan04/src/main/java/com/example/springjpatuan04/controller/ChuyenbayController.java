@@ -24,4 +24,8 @@ public class ChuyenbayController {
     public List<Chuyenbay> cau5(){
         return  chuyenbayRepository.findByGadiAndGaden("SGN","BMV");
     }
+    @RequestMapping("cau6")
+    public Integer cau6(){
+        return  chuyenbayRepository.countChuyenbayByGadi("SGN");
+    }
 }
