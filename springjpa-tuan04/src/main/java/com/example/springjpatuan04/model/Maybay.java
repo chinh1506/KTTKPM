@@ -1,5 +1,6 @@
 package com.example.springjpatuan04.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,5 +21,6 @@ public class Maybay {
     private int tambay;
 
     @OneToMany(mappedBy = "maybay")
+    @JsonBackReference
     private List<Chungnhan> chungnhans;
 }

@@ -22,8 +22,9 @@ public class NhanvienController {
     public Double cau8() {
         return nhanvienRepository.getSumByLuong();
     }
-    @GetMapping("cau9")
-    public List<String> cau9() {
-        return nhanvienRepository.getIdByMaybay("Boeing");
+
+    @GetMapping("cau10")
+    public List<Nhanvien> cau10() {
+        return nhanvienRepository.findByMaMaybay(747);
     }
 }
