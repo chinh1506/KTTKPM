@@ -11,4 +11,7 @@ public interface MaybayRepository extends JpaRepository<Maybay,Integer> {
     @Query(value = "select * from maybay where tambay>=?1",nativeQuery = true)
     public List<Maybay> findByTambayMoreThanNKm(Integer tambay);
 
+    @Query(value = "select  count(*) from maybay where loai like %?1%",nativeQuery = true)
+    public Integer countMaybayByLoai(String loai);
+
 }

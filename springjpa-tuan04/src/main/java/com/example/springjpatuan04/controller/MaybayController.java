@@ -17,4 +17,8 @@ public class MaybayController {
     public List<Maybay> cau2(){
         return maybayRepository.findByTambayMoreThanNKm(10000);
     }
+    @GetMapping("cau7")
+    public Integer cau7(){
+        return maybayRepository.countMaybayByLoai("Boeing");
+    }
 }
