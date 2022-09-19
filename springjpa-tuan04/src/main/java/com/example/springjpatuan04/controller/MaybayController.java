@@ -21,4 +21,8 @@ public class MaybayController {
     public Integer cau7(){
         return maybayRepository.countMaybayByLoai("Boeing");
     }
+    @GetMapping("cau11")
+    public List<Maybay> cau11(){
+        return maybayRepository.findByHoNhanvien("Nguyen");
+    }
 }
