@@ -10,5 +10,7 @@ public interface ChuyenbayRepository extends JpaRepository<Chuyenbay,String> {
     public List<Chuyenbay> findByGaden(String gaden);
     public List<Chuyenbay> findByDodaiBetween(int min, int max);
 
+    public List<Chuyenbay> findByGadiAndGaden(String gadi, String gaden);
+
 
 }

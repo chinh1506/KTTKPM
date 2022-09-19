@@ -20,4 +20,8 @@ public class ChuyenbayController {
     public List<Chuyenbay> cau4(){
         return  chuyenbayRepository.findByDodaiBetween(8000,10000);
     }
+    @RequestMapping("cau5")
+    public List<Chuyenbay> cau5(){
+        return  chuyenbayRepository.findByGadiAndGaden("SGN","BMV");
+    }
 }
