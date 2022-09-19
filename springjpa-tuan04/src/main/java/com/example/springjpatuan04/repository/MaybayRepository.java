@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface MaybayRepository extends JpaRepository<Maybay,Integer> {
 
-    @Query(value = "select * from maybay where tambay>=?1 group by loai",nativeQuery = true)
+    @Query(value = "select * from maybay where tambay>=?1",nativeQuery = true)
     public List<Maybay> findByTambayMoreThanNKm(Integer tambay);
 
 }
