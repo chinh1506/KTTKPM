@@ -13,8 +13,14 @@ import java.util.List;
 public class NhanvienController {
     @Autowired
     private NhanvienRepository nhanvienRepository;
+
     @GetMapping("cau3")
-    public List<Nhanvien> cau3(){
+    public List<Nhanvien> cau3() {
         return nhanvienRepository.findByLuongLessThanEqual(10000);
+    }
+
+    @GetMapping("cau8")
+    public Double cau8() {
+        return nhanvienRepository.getSumByLuong();
     }
 }
