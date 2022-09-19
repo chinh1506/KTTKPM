@@ -1,0 +1,33 @@
+HELP.md
+springjpa-tuan04/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+springjpa-tuan04/.classpath
+springjpa-tuan04/.factorypath
+springjpa-tuan04/.project
+springjpa-tuan04/.settings
+springjpa-tuan04/.springBeans
+springjpa-tuan04/.sts4-cache
+
+### IntelliJ IDEA ###
+springjpa-tuan04/.idea
+springjpa-tuan04/*.iws
+springjpa-tuan04/*.iml
+springjpa-tuan04/*.ipr
+
+### NetBeans ###
+springjpa-tuan04/nbproject/private/
+springjpa-tuan04/nbbuild/
+springjpa-tuan04/dist/
+springjpa-tuan04/nbdist/
+springjpa-tuan04/.nb-gradle/
+springjpa-tuan04/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
