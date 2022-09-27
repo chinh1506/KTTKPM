@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  postgresql:
+    image: postgres
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: "changeme"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "airline"
+    volumes:
+      - ~postges/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  spring_boot_docker_compose:
+    container_name: tuan5-API
+    build: .
+    env_file: .env
+    environment:
+      - DATABASE_HOST=postgresql
+    depends_on:
+      - postgresql
+    ports:
+      - 8080:8080
