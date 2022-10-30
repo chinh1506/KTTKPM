@@ -1,0 +1,22 @@
+server:
+  port: 9999
+
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: exampleService
+          uri: https://jsonplaceholder.typicode.com/
+          predicates:
+            - Path=/posts/1
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/stackjava/spring-cloud-config-server-repo.git
+#          search-paths: demo
+#          default-label: master
+#          username:
+#          password:
+#          uri: C:/Users/stackjava/Desktop/spring-cloud-config-server-repo
